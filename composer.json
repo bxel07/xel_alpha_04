@@ -1,0 +1,20 @@
+{
+    "name": "xel/framework",
+    "description": "build project alpha 0.4",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Xel\\Framework\\": "devise/"
+        }
+    },
+    "authors": [
+        {
+            "name": "bxel",
+            "email": "yogipratama.ut@gmail.com"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "require": {
+        "php" : ">=8"
+    }
+}
