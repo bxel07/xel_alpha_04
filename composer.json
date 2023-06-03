@@ -1,10 +1,11 @@
 {
     "name": "xel/framework",
-    "description": "build project alpha 0.4",
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Xel\\Framework\\": "devise/"
+            "devise\\": "devise/",
+            "setup\\": "setup/",
+            "router\\": "router/"
         }
     },
     "authors": [
@@ -13,8 +14,9 @@
             "email": "yogipratama.ut@gmail.com"
         }
     ],
-    "minimum-stability": "alpha",
     "require": {
-        "php" : ">=8"
+        "php" :">=8",
+        "react/event-loop": "^1.1",
+        "react/http": "1.6"
     }
 }
