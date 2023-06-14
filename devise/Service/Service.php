@@ -14,4 +14,10 @@ class Service{
        echo "Note Other things";
        //form model
     }
+
+    public function test() {
+        $instance = new BaseData();
+        echo $instance->test() . "<br />";
+        echo "testing result";
+    }
 }
