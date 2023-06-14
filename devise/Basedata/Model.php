@@ -2,10 +2,15 @@
 
 namespace devise\Basedata;
 use setup\baseclass\BaseData;
+use devise\Devise\BaseConn;
 
 class Model extends BaseData {
     public function index() {
-        $x = 2;
+        // $instance = new BaseData();
+        // $instance->test();
+
+        $instance = new BaseConn();
+        $x = $instance->getPDO();
         return $x;
     }
 }

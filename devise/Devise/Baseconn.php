@@ -1,8 +1,8 @@
 <?php
 
 // psr-4 autoloading
-namespace xel\framework\Devise;
-require_once __DIR__."./../../vendor/autoload.php";
+namespace devise\Devise;
+//require_once __DIR__."./../../vendor/autoload.php";
 
 // library mengaktifkan variabel globel
 use Dotenv\Dotenv;

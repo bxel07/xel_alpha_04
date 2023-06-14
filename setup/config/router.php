@@ -1,13 +1,9 @@
 <?php
 
 namespace setup\config;
-require_once __DIR__."/../../vendor/autoload.php";
-
 
 class Router{
     private static array $routes = [];
-
-
     public static function add(string $method, string $path, string $controller, string $function, array $middleware = []): void {
         self::$routes[] = [
             'method' => $method,
@@ -54,3 +50,35 @@ class Router{
         echo "controller not found";
     }
 }
+
+// Implementation Code 
+// Setup for Object router for delegation using trait method 
+/*
+
+    class Router extend rounterconf{
+
+        public funtion get() {
+            
+        }
+
+        public function post() {
+
+        }
+
+        public function put() {
+
+        }
+
+        public funtion patch() {
+
+        }
+
+        public function delete() {
+
+        }   
+
+        public function go() {
+
+        }   
+    }
+*/
