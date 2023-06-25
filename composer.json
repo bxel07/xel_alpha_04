@@ -1,6 +1,10 @@
 {
     "name": "xel/framework",
     "type": "project",
+    "scripts": {
+        "run-test": "php vendor/bin/phpunit setup/tests/",
+        "make-test": "php vendor/make-test.php"
+    },
     "autoload": {
         "psr-4": {
             "devise\\": "devise/",
@@ -18,6 +22,7 @@
         "php" :">=8",
         "react/event-loop": "^1.1",
         "react/http": "1.6",
-        "vlucas/phpdotenv": "^5.5"
+        "vlucas/phpdotenv": "^5.5",
+        "phpunit/phpunit": "^10.2"
     }
 }
