@@ -1,84 +1,32 @@
 <?php
-
 namespace setup\config;
+use \setup\utilityclass\conf_router\RequestHandler;
+use \setup\interface\appRouter;
 
-class Router{
-    private static array $routes = [];
-    public static function add(string $method, string $path, string $controller, string $function, array $middleware = []): void {
-        self::$routes[] = [
-            'method' => $method,
-            'path' => $path,
-            'controller' => $controller,
-            'function' => $function,
-            'middleware' => $middleware
-        ];
+class router implements appRouter{
+    use RequestHandler;
+
+    public function get(string $path, string $controller, string $function, array $middleware = [], ):void{
+        self::add('GET', $path, $controller, $function, $middleware);
     }
-    
 
-    public static function run():void {
-        $path = "/";
+    public function post(string $path, string $controller, string $function, array $middleware = []):void{
+        self::add('POST', $path, $controller, $function, $middleware);
+    }
 
-        if(isset($_SERVER['PATH_INFO'])){
-            $path = $_SERVER['PATH_INFO'];
-        }
+    public function put(string $path, string $controller, string $function, array $middleware = []):void{
+        self::add('PUT', $path, $controller, $function, $middleware);
+    }
 
-        $method = $_SERVER['REQUEST_METHOD'];
+    public function patch(string $path, string $controller, string $function, array $middleware = []):void{
+        self::add('PATCH', $path, $controller, $function, $middleware);
+    }
 
-        foreach (self::$routes as $route) {
-            $pattern = "#^".$route['path']."$#";
-            if (preg_match($pattern,$path,$variables) && $method == $route['method']) {  
-                
-                // detect middleware and creating instance
-                foreach($route['middleware'] as $middleware) {
-                    $instance = new $middleware;
-                    $instance->before();
-                }
-                
-                
-                $function = $route['function'];
-                $controller = new $route['controller'];
-                
-                // masih terdapat bug untuk menavigasikan dan mengantikan query list
-                array_shift($variables);
-                call_user_func_array([$controller, $function], $variables);
-                return;
+    public function delete(string $path, string $controller, string $function, array $middleware = []):void{
+        self::add('DELETE', $path, $controller, $function, $middleware);
+    }
 
-            }
-            
-        }
-        http_response_code(404);
-        echo "controller not found";
+    public function exec():void{
+        self::run();
     }
 }
-
-// Implementation Code 
-// Setup for Object router for delegation using trait method 
-/*
-
-    class Router extend rounterconf{
-
-        public funtion get() {
-            
-        }
-
-        public function post() {
-
-        }
-
-        public function put() {
-
-        }
-
-        public funtion patch() {
-
-        }
-
-        public function delete() {
-
-        }   
-
-        public function go() {
-
-        }   
-    }
-*/

@@ -1,7 +1,6 @@
 <?php
 
 namespace setup\config;
-use devise\Service\Service;
 
 class bootstrap {
 
@@ -21,6 +20,9 @@ class bootstrap {
         if(!file_exists($class)) {
             return;
         }
+        
         require_once $class;
     }
+
+    
 }

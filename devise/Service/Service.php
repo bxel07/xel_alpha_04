@@ -3,8 +3,7 @@
 namespace devise\Service;
 use devise\Basedata\Model;
 use setup\baseclass\BaseData;
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
 
 class Service{ 
     public function index() {
