@@ -17,7 +17,7 @@ class BaseConn {
 
     public function __construct()
     {
-        $dotenv = Dotenv::createImmutable(__DIR__.'/../..');
+        $dotenv = Dotenv::createImmutable(__DIR__ . '/../xel_alpha_04');
         $dotenv->load();
 
         $host = $_ENV['DB_HOST'];

@@ -4,7 +4,7 @@ use devise\Service\Test;
 use PHPUnit\Framework\TestCase;
 class CobaTest extends TestCase
 {
-    public function testCoba()
+    public function testCoba2()
     {
         $x = 5;
 
