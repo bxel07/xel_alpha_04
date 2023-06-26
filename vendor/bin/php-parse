@@ -28,6 +28,7 @@ if (PHP_VERSION_ID < 80000) {
 
             public function stream_open($path, $mode, $options, &$opened_path)
             {
+                global $arg;
                 // get rid of phpvfscomposer:// prefix for __FILE__ & __DIR__ resolution
                 $opened_path = substr($path, 17);
                 $this->realpath = realpath($opened_path) ?: $opened_path;

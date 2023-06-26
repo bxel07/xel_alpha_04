@@ -1,15 +1,16 @@
- 
 <?php
+
+    namespace setup\config;
 
     use PHPUnit\Framework\TestCase;
     
-    Class Testing extends TestCase
+    class Testing extends TestCase
     {
-        public function testCoba()
+        public function testcoba()
         {
             $test = 'halo';
 
             $this->assertEquals('halo', $test);
         }
     }
-?> 
+
